@@ -1,0 +1,16 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "email": "Emerson@gmail.com",
+            "password": "12345678",
+            "name": "Emerson Rodrigo",
+            "cpf": "12345678911",
+            "dateOfBirth": "",
+            "adress": {
+                "street": "Rua Teste",
+                "number": "7"
+            }
+        }
+    ]
+}

@@ -45,5 +45,12 @@ table {
 	border-spacing: 0;
 }
 
+body{
+	font-family: 'Roboto', sans-serif;
+}
+
+*{
+	box-sizing: border-box;
+}
 
 `

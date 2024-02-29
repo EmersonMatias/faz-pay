@@ -1,5 +1,5 @@
 import { createBrowserRouter, createRoutesFromElements, Route } from "react-router-dom";
-import Login from "../pages/Login/page";
+import Login from "../pages/Login/login";
 
 export const router = createBrowserRouter(
     createRoutesFromElements(
