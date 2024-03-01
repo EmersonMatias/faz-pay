@@ -9,4 +9,8 @@ export const Container = styled.header`
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
     display: flex;
     justify-content: center;
+
+    img{
+        height: 80px;
+    }
 `

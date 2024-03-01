@@ -55,5 +55,111 @@
       "password": "12345678"
     }
   ],
-  "products": []
+  "products": [
+    {
+      "id": 1,
+      "name": "Petrobras SA",
+      "price": 25.30,
+      "category": "Ações Nacionais",
+      "description": "Empresa brasileira de energia."
+    },
+    {
+      "id": 2,
+      "name": "Apple Inc.",
+      "price": 150.55,
+      "category": "Ações Internacionais",
+      "description": "Empresa de tecnologia dos Estados Unidos."
+    },
+    {
+      "id": 3,
+      "name": "Bitcoin",
+      "price": 42000.00,
+      "category": "Criptomoedas",
+      "description": "Moeda digital descentralizada."
+    },
+    {
+      "id": 4,
+      "name": "Vanguard Real Estate ETF",
+      "price": 100.75,
+      "category": "Fundos Imobiliários",
+      "description": "Fundo negociado em bolsa que investe em propriedades imobiliárias."
+    },
+    {
+      "id": 5,
+      "name": "Itaú Unibanco Holding SA",
+      "price": 30.40,
+      "category": "Ações Nacionais",
+      "description": "Banco brasileiro."
+    },
+    {
+      "id": 6,
+      "name": "Amazon.com Inc.",
+      "price": 3500.25,
+      "category": "Ações Internacionais",
+      "description": "Empresa de comércio eletrônico dos Estados Unidos."
+    },
+    {
+      "id": 7,
+      "name": "Ethereum",
+      "price": 2500.00,
+      "category": "Criptomoedas",
+      "description": "Plataforma de contrato inteligente descentralizada."
+    },
+    {
+      "id": 8,
+      "name": "SPDR Dow Jones REIT ETF",
+      "price": 90.80,
+      "category": "Fundos Imobiliários",
+      "description": "Fundo negociado em bolsa que rastreia o desempenho dos REITs."
+    },
+    {
+      "id": 9,
+      "name": "Banco do Brasil SA",
+      "price": 35.60,
+      "category": "Ações Nacionais",
+      "description": "Banco brasileiro."
+    },
+    {
+      "id": 10,
+      "name": "Alibaba Group Holding Ltd",
+      "price": 200.15,
+      "category": "Ações Internacionais",
+      "description": "Empresa de comércio eletrônico da China."
+    },
+    {
+      "id": 11,
+      "name": "Litecoin",
+      "price": 150.00,
+      "category": "Criptomoedas",
+      "description": "Criptomoeda ponto-a-ponto de código aberto."
+    },
+    {
+      "id": 12,
+      "name": "Vanguard Global ex-U.S. Real Estate ETF",
+      "price": 85.20,
+      "category": "Fundos Imobiliários",
+      "description": "Fundo negociado em bolsa que investe em propriedades imobiliárias fora dos Estados Unidos."
+    },
+    {
+      "id": 13,
+      "name": "Bradesco SA",
+      "price": 27.80,
+      "category": "Ações Nacionais",
+      "description": "Banco brasileiro."
+    },
+    {
+      "id": 14,
+      "name": "Tesla Inc.",
+      "price": 800.75,
+      "category": "Ações Internacionais",
+      "description": "Empresa de veículos elétricos dos Estados Unidos."
+    },
+    {
+      "id": 15,
+      "name": "Ripple",
+      "price": 1.50,
+      "category": "Criptomoedas",
+      "description": "Sistema de liquidação bruta em tempo real."
+    }
+  ]
 }
