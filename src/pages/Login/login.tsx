@@ -1,8 +1,11 @@
 import { useForm } from "react-hook-form";
-import { Container, Form, FormContainer, ImgLogo } from "./styled";
+import { Container, ImgLogo } from "./styled";
 import InputForm from "../../components/Input-Form/input-form";
 import { Button } from "../../components/ui/button";
 import Logo from "../../assets/img/Logo.png"
+import { FormContainer, Form } from "../../components/ui/form";
+import { CustomLink } from "../../components/ui/custom-link";
+
 
 export default function Login() {
     const { register, formState: { errors }, handleSubmit } = useForm<LoginForm>()
@@ -18,9 +21,10 @@ export default function Login() {
         <Container>
 
             <FormContainer>
-                <ImgLogo src={Logo}/>
 
-                <Form  onSubmit={handleSubmit((e) => onSubmitLogin(e))}>
+                <ImgLogo src={Logo} />
+
+                <Form onSubmit={handleSubmit((e) => onSubmitLogin(e))}>
                     <InputForm
                         label="Email"
                         name="email"
@@ -36,18 +40,16 @@ export default function Login() {
                         register={register}
                         type="password"
                         required="Digite um senha"
-                        minLength={{
-                            value: 8,
-                            message: "Digite uma senha de no minimo 8 digitos"
-                        }}
                         message={errors?.password?.message}
                     />
 
                     <Button>Logar</Button>
                 </Form>
+
+                <p className="signupMessage">Não tem uma conta? <CustomLink to={"/register"}>Criar minha conta</CustomLink></p>
             </FormContainer>
 
-            <p>Não tem uma conta? Criar minha conta</p>
+
 
         </Container>
     )

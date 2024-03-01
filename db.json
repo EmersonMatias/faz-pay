@@ -1,16 +1,59 @@
 {
-    "users": [
-        {
-            "id": 1,
-            "email": "Emerson@gmail.com",
-            "password": "12345678",
-            "name": "Emerson Rodrigo",
-            "cpf": "12345678911",
-            "dateOfBirth": "",
-            "adress": {
-                "street": "Rua Teste",
-                "number": "7"
-            }
-        }
-    ]
+  "users": [
+    {
+      "id": "fdfe",
+      "name": "Emerson Rodrigo",
+      "email": "emerson@email.com",
+      "password": "12345678"
+    },
+    {
+      "id": "50ee",
+      "name": "Emerson Rodrigo",
+      "email": "emerson@email.com",
+      "password": "12345678"
+    },
+    {
+      "id": "06dd",
+      "name": "Eemrson",
+      "email": "emerson@emerson",
+      "password": "123456789"
+    },
+    {
+      "id": "20aa",
+      "name": "Eemrson",
+      "email": "emerson@emerson",
+      "password": "123456789"
+    },
+    {
+      "id": "5527",
+      "name": "Eemrson",
+      "email": "emerson@emerson",
+      "password": "123456789"
+    },
+    {
+      "id": "434a",
+      "name": "Eemrson",
+      "email": "emerson@emerson",
+      "password": "123456789"
+    },
+    {
+      "id": "eca5",
+      "name": "Eemrson",
+      "email": "emerson@emerson",
+      "password": "123456789"
+    },
+    {
+      "id": "9b76",
+      "name": "Adriana",
+      "email": "adriana@email.com",
+      "password": "12345678"
+    },
+    {
+      "id": "81bc",
+      "name": "Adriana",
+      "email": "emerosn@gmail.com",
+      "password": "12df4d5f4sdfdf"
+    }
+  ],
+  "products": []
 }
