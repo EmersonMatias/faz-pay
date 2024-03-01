@@ -14,6 +14,6 @@ export const Container = styled.div`
 `
 
 export const ImgLogo = styled.img`
-    width: 300px;
+    width: 200px;
     height: fit-content;
 `

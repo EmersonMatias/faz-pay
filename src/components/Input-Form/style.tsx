@@ -12,5 +12,5 @@ import styled from "styled-components";
 
 export const ErrorMessage = styled.p`
     font-weight: 600;
-    color: #ff5d5d;
+    color: ${props => props.theme.colors.red};
 `

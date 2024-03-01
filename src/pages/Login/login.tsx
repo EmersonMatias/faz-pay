@@ -5,17 +5,21 @@ import { Button } from "../../components/ui/button";
 import Logo from "../../assets/img/Logo.png"
 import { FormContainer, Form } from "../../components/ui/form";
 import { CustomLink } from "../../components/ui/custom-link";
+import { useLoginUser } from "../../hooks/users-hooks";
+import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 
 export default function Login() {
     const { register, formState: { errors }, handleSubmit } = useForm<LoginForm>()
-    console.log(errors)
+    const { mutate: login, data: user } = useLoginUser()
+    const navigate = useNavigate()
 
-
-    function onSubmitLogin(e: LoginForm) {
-
-        console.log(e)
-    }
+    useEffect(() => {
+        if (user?.length === 1) {
+            navigate("/home")
+        }
+    }, [user, navigate])
 
     return (
         <Container>
@@ -24,7 +28,7 @@ export default function Login() {
 
                 <ImgLogo src={Logo} />
 
-                <Form onSubmit={handleSubmit((e) => onSubmitLogin(e))}>
+                <Form onSubmit={handleSubmit((e) => login(e))}>
                     <InputForm
                         label="Email"
                         name="email"
@@ -44,18 +48,18 @@ export default function Login() {
                     />
 
                     <Button>Logar</Button>
+
+                    {user?.length === 0 && <p className="errorLogin">Email ou senha incorretos!</p>}
                 </Form>
 
                 <p className="signupMessage">Não tem uma conta? <CustomLink to={"/register"}>Criar minha conta</CustomLink></p>
             </FormContainer>
 
-
-
         </Container>
     )
 }
 
-interface LoginForm {
+export interface LoginForm {
     email: string,
     password: string
 }

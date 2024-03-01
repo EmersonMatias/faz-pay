@@ -10,7 +10,7 @@ import { CustomLink } from "../../components/ui/custom-link";
 import { SucessMessage } from "../../components/ui/sucess-message";
 import { resetMutation } from "../../utils/functions";
 
-export default function Signup() {
+export default function Register() {
     const { register, handleSubmit, formState: { errors }, reset } = useForm<RegisterForm>()
     const { mutate: registerUser, isSuccess, reset: resetRegister } = useRegisterUser(reset)
 
