@@ -70,18 +70,18 @@
       "description": "Empresa brasileira de energia."
     },
     {
-      "id": "2",
       "name": "Apple Inc.",
       "price": 150.55,
       "category": "Ações Internacionais",
-      "description": "Empresa de tecnologia dos Estados Unidos."
+      "description": "Empresa de tecnologia dos Estados Unidos.",
+      "id": "2"
     },
     {
-      "id": "3",
       "name": "Bitcoin",
       "price": 42000,
       "category": "Criptomoedas",
-      "description": "Moeda digital descentralizada."
+      "description": "Moeda digital descentralizada.",
+      "id": "3"
     },
     {
       "id": "4",
@@ -154,11 +154,11 @@
       "description": "Banco brasileiro."
     },
     {
-      "id": "14",
-      "name": "Tesla Inc.",
-      "price": 800.75,
+      "name": "Tesla Inc",
+      "price": 8500.75,
       "category": "Ações Internacionais",
-      "description": "Empresa de veículos elétricos dos Estados Unidos."
+      "description": "Empresa de veículos elétricos dos Estados Unidos.",
+      "id": "14"
     }
   ]
 }

@@ -13,6 +13,16 @@ export function useGetAllProducts() {
     })
 }
 
+export function useGetOneProduct(id: string) {
+    return useQuery({
+        queryKey: ["product", `${id}`],
+        queryFn: async () => {
+            const sucess: AxiosResponse<Products> = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/products/${id}`)
+            return sucess.data
+        }
+    })
+}
+
 export function useDeleteProduct() {
     const queryClient = useQueryClient()
 
@@ -27,15 +37,17 @@ export function useDeleteProduct() {
     })
 }
 
-export function useUpdateProduct() {
+export function useUpdateProduct({ reset, setProduct }: useUpdateProductProps) {
     const queryClient = useQueryClient()
 
     return useMutation({
         mutationKey: ["products"],
-        mutationFn: async ({ id, product }: { id: string, product: Product }) => {
-            await axios.put(`${import.meta.env.VITE_BACKEND_URL}/products/${id}`, product)
+        mutationFn: async (product: Products) => {
+            await axios.put(`${import.meta.env.VITE_BACKEND_URL}/products/${product.id}`, product)
         },
         onSuccess: () => {
+            reset()
+            setProduct(null)
             queryClient.invalidateQueries({ queryKey: ["products"] })
         }
     })
@@ -57,6 +69,11 @@ export function useCreateProduct(reset: UseFormReset<ProductForm>) {
 }
 
 
+export interface useUpdateProductProps {
+    reset: UseFormReset<ProductForm>,
+    setProduct: React.Dispatch<React.SetStateAction<Products | null>>
+}
+
 export interface Products {
     id: string,
     name: string,
@@ -65,4 +82,4 @@ export interface Products {
     description: string
 }
 
-export interface Product extends Omit<Products,'id'>{}
+export interface Product extends Omit<Products, 'id'> { }

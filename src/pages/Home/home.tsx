@@ -8,7 +8,8 @@ import { CreateProductButton } from "../../components/ui/button";
 
 export default function Home() {
     const { data: products, isSuccess } = useGetAllProducts()
-    const [modalOpen, setModalOpen] = useState(false)
+    const [createProductCardOpen, setCreateProductCardOpen] = useState(false)
+
 
     return (
         <Container>
@@ -17,13 +18,15 @@ export default function Home() {
             <TitleContainer>
                 <h1>Investimentos</h1>
 
-                <CreateProductButton onClick={() => setModalOpen(true)}>Criar Investimento</CreateProductButton>
+                <CreateProductButton onClick={() => setCreateProductCardOpen(true)}>Criar Investimento</CreateProductButton>
             </TitleContainer>
 
 
 
             {isSuccess && <TableDesktop products={products} />}
-            {modalOpen && <CreateProductCard setModalOpen={setModalOpen} />}
+            {createProductCardOpen && <CreateProductCard setCreateProductCardOpen={setCreateProductCardOpen} />}
+
+
         </Container>
     )
 }

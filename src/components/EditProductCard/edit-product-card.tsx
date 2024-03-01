@@ -4,23 +4,40 @@ import { FormContainer, Form } from "../ui/form";
 import { Container, ExitIcon } from "./styled";
 import { Button } from "../ui/button";
 import Exit from "../../assets/img/Exit.png"
-import { Product, useCreateProduct } from "../../hooks/products-hooks";
+import { Products, useUpdateProduct } from "../../hooks/products-hooks";
+import { useEffect } from "react";
 
-export default function CreateProductCard({ setCreateProductCardOpen }: CreateProductCardProps) {
-    const { register, formState: { errors }, handleSubmit, reset } = useForm<ProductForm>()
-    const { mutate: createProduct } = useCreateProduct(reset)
+export default function EditProductCard({ setProduct, product }: CreateProductCardProps) {
+    const { register, formState: { errors }, setValue, handleSubmit, reset } = useForm<ProductForm>()
+    const { mutate: updateProduct } = useUpdateProduct({ reset, setProduct })
+    const id = product?.id
+
+    useEffect(() => {
+        if (product) {
+            setValue("name", product?.name)
+            setValue("price", `${product?.price}`)
+            setValue("category", product?.category)
+            setValue("description", product?.description)
+        }
+    }, [product, setValue])
+
 
     function onSubmitProductsForm(productForm: ProductForm) {
         const price = Number(productForm.price)
-        const product: Product = { ...productForm, price }
+        const newProduct: Products = { ...productForm, price, id }
 
-        createProduct(product)
+        updateProduct(newProduct)
+    }
+
+
+    function handleExit() {
+        setProduct(null)
     }
 
     return (
         <Container>
             <FormContainer>
-                <ExitIcon src={Exit} onClick={() => setCreateProductCardOpen(false)} />
+                <ExitIcon src={Exit} onClick={() => handleExit()} />
 
                 <Form style={{ paddingTop: "48px" }} onSubmit={handleSubmit((e) => onSubmitProductsForm(e))}>
 
@@ -75,18 +92,17 @@ export default function CreateProductCard({ setCreateProductCardOpen }: CreatePr
                         message={errors?.description?.message}
                     />
 
-                    <Button>Criar investimento</Button>
+                    <Button>Editar investimento</Button>
                 </Form>
             </FormContainer>
         </Container>
     )
 }
 
-
 interface CreateProductCardProps {
-    setCreateProductCardOpen: React.Dispatch<React.SetStateAction<boolean>>
+    product: Products,
+    setProduct: React.Dispatch<React.SetStateAction<Products | null>>
 }
-
 
 export interface ProductForm {
     name: string,

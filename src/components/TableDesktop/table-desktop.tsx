@@ -1,19 +1,26 @@
 import Trash from "../../assets/img/Trash.png"
 import Edit from "../../assets/img/Edit.png"
-import { Products, useDeleteProduct } from "../../hooks/products-hooks";
+import {  Products, useDeleteProduct } from "../../hooks/products-hooks";
 import { formatPriceBR } from "../../utils/format-price-br";
 import { Container, Icon } from "./style";
+import { useState } from "react";
+import EditProductCard from "../EditProductCard/edit-product-card";
 
 export default function TableDesktop({ products }: Readonly<TableProps>) {
     const { mutate: deleteProduct } = useDeleteProduct()
+    const [product, setProduct] = useState<Products | null>(null)
 
     function handleDeleteProduct(id: string, name: string) {
         const confirm = window.confirm(`Você tem certeza que deseja deletar o investimento ${name}?`)
         if (confirm) {
             console.log(confirm)
 
-           return deleteProduct(id)
+            return deleteProduct(id)
         }
+    }
+
+    function handleEdit(product: Products) {
+        setProduct(product)
     }
 
 
@@ -35,14 +42,16 @@ export default function TableDesktop({ products }: Readonly<TableProps>) {
                 </thead>
 
                 <tbody>
-                    {products?.map(({ id, name, price, description, category }) => {
+                    {products?.map((product) => {
+                        const { id, name, price, description, category } = product
+
                         return <tr key={id}>
                             <td> {id}</td>
                             <td>{name}</td>
                             <td>{formatPriceBR(price)}</td>
                             <td >{category}</td>
                             <td >{description}</td>
-                            <td ><Icon src={Edit} /></td>
+                            <td ><Icon src={Edit} onClick={() => handleEdit(product)} /></td>
                             <td ><Icon onClick={() => handleDeleteProduct(id, name)} src={Trash} /></td>
                         </tr>
                     })}
@@ -50,6 +59,13 @@ export default function TableDesktop({ products }: Readonly<TableProps>) {
                 </tbody>
 
             </table>
+            {
+                product &&
+                <EditProductCard
+                    product={product}
+                    setProduct={setProduct}
+                />
+            }
         </Container>
     )
 }
