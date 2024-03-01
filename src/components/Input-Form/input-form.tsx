@@ -36,7 +36,7 @@ export default function InputForm({ label, name, register, type, isPending, maxL
                     required: required,
                     minLength,
                     maxLength,
-                    validate
+                    validate,
                 })}
             />
            <ErrorMessage>{message}</ErrorMessage>

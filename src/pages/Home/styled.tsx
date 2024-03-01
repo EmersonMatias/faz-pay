@@ -7,6 +7,10 @@ export const Container = styled.div`
 `
 
 export const TitleContainer = styled.div`
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 24px;
+
     h1{
         font-size: 32px;
         font-weight: 600;

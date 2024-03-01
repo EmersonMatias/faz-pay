@@ -9,6 +9,7 @@ export const Button = styled.button`
     border: none;
    font-size: 18px;
    position: relative;
+   cursor: pointer;
 `
 
 export const ExitButton = styled(Button)`
@@ -16,5 +17,8 @@ export const ExitButton = styled(Button)`
     right: 24px;
     top: 24px;
     padding: 8px 24px;
-    cursor: pointer;
+`
+
+export const CreateProductButton = styled(Button)`
+padding: 8px 24px;
 `

@@ -1,7 +1,7 @@
 import Trash from "../../assets/img/Trash.png"
 import Edit from "../../assets/img/Edit.png"
 import { Products, useDeleteProduct } from "../../hooks/products-hooks";
-import { formatValue } from "../../utils/format-value";
+import { formatPriceBR } from "../../utils/format-price-br";
 import { Container, Icon } from "./style";
 
 export default function TableDesktop({ products }: Readonly<TableProps>) {
@@ -15,6 +15,8 @@ export default function TableDesktop({ products }: Readonly<TableProps>) {
            return deleteProduct(id)
         }
     }
+
+
 
     return (
         <Container>
@@ -37,7 +39,7 @@ export default function TableDesktop({ products }: Readonly<TableProps>) {
                         return <tr key={id}>
                             <td> {id}</td>
                             <td>{name}</td>
-                            <td>{formatValue(price)}</td>
+                            <td>{formatPriceBR(price)}</td>
                             <td >{category}</td>
                             <td >{description}</td>
                             <td ><Icon src={Edit} /></td>
