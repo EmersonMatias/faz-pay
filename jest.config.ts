@@ -7,5 +7,6 @@ export default {
     },
     snapshotSerializers: [
         "enzyme-to-json/serializer"
-    ]
+    ],
+    moduleFileExtensions: ['js', 'mjs', 'cjs', 'jsx', 'ts', 'tsx', 'json', 'node'],
 }

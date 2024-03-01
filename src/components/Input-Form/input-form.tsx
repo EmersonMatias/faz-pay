@@ -1,36 +1,17 @@
-import { UseFormRegister } from "react-hook-form";
+
+import { InputFormProps } from "../../types/type";
 import { Input } from "../ui/input";
 import { Container, ErrorMessage } from "./style";
-import { HTMLInputTypeAttribute } from "react";
 
-interface InputFormProps {
-    label: string
-    type: HTMLInputTypeAttribute | undefined,
-    name: string,
-    register: UseFormRegister<any>,
-    validate?: (data: string) => string | undefined,
-    required?: string
-    minLength?: {
-        message: string,
-        value: number
-    },
-    maxLength?: {
-        message: string,
-        value: number
-    }
-    placeholder?: string
-    message?: string
-    isPending?: boolean
-}
-
-export default function InputForm({ label, name, register, type, isPending, maxLength, message, minLength, placeholder, required, validate }: Readonly<InputFormProps>) {
+export default function InputForm(props: InputFormProps) {
+        const { label, name, register, type, maxLength, message, minLength, placeholder, required, validate} = props
+    
     return (
         <Container>
             <label htmlFor={name}>{label}</label>
             <Input
                 id={name}
                 type={type}
-                disabled={isPending}
                 placeholder={placeholder}
                 {...register(name, {
                     required: required,
@@ -43,5 +24,7 @@ export default function InputForm({ label, name, register, type, isPending, maxL
         </Container>
     )
 }
+
+
 
 
