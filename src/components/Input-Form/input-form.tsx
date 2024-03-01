@@ -1,5 +1,5 @@
 import { UseFormRegister } from "react-hook-form";
-import { Input } from "../ui/Input";
+import { Input } from "../ui/input";
 import { Container, ErrorMessage } from "./style";
 import { HTMLInputTypeAttribute } from "react";
 
