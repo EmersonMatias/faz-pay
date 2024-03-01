@@ -1,10 +1,21 @@
 import Trash from "../../assets/img/Trash.png"
 import Edit from "../../assets/img/Edit.png"
-import { Products } from "../../hooks/products-hooks";
+import { Products, useDeleteProduct } from "../../hooks/products-hooks";
 import { formatValue } from "../../utils/format-value";
 import { Container, Icon } from "./style";
 
 export default function TableDesktop({ products }: Readonly<TableProps>) {
+    const { mutate: deleteProduct } = useDeleteProduct()
+
+    function handleDeleteProduct(id: string, name: string) {
+        const confirm = window.confirm(`Você tem certeza que deseja deletar o investimento ${name}?`)
+        if (confirm) {
+            console.log(confirm)
+
+           return deleteProduct(id)
+        }
+    }
+
     return (
         <Container>
             <table>
@@ -29,8 +40,8 @@ export default function TableDesktop({ products }: Readonly<TableProps>) {
                             <td>{formatValue(price)}</td>
                             <td >{category}</td>
                             <td >{description}</td>
-                            <td ><Icon src={Edit}/></td>
-                            <td ><Icon src={Trash}/></td>
+                            <td ><Icon src={Edit} /></td>
+                            <td ><Icon onClick={() => handleDeleteProduct(id, name)} src={Trash} /></td>
                         </tr>
                     })}
 
