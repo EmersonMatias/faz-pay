@@ -1,9 +1,12 @@
+import Header from "../../components/Header/header";
 import { Container } from "./styled";
 
-export default function Home(){
-    return(
+export default function Home() {
+    return (
         <Container>
-            Home
+            <Header />
+
+            
         </Container>
     )
 }
