@@ -1,7 +1,7 @@
 import Trash from "../../assets/img/Trash.png"
 import Edit from "../../assets/img/Edit.png"
 import { Products } from "../../hooks/products-hooks";
-import { formatValue } from "../../utils/formatValue";
+import { formatValue } from "../../utils/format-value";
 import { Container, Icon } from "./style";
 
 export default function TableDesktop({ products }: Readonly<TableProps>) {

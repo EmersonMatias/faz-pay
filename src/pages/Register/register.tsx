@@ -8,7 +8,7 @@ import { Button } from "../../components/ui/button";
 import { useRegisterUser } from "../../hooks/users-hooks";
 import { CustomLink } from "../../components/ui/custom-link";
 import { SucessMessage } from "../../components/ui/sucess-message";
-import { resetMutation } from "../../utils/functions";
+import { resetMutation } from "../../utils/reset-mutation";
 
 export default function Register() {
     const { register, handleSubmit, formState: { errors }, reset } = useForm<RegisterForm>()
