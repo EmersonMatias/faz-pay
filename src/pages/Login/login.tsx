@@ -8,6 +8,7 @@ import { CustomLink } from "../../components/ui/custom-link";
 import { useLoginUser } from "../../hooks/users-hooks";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
+import Cookies from "js-cookie"
 
 
 export default function Login() {
@@ -17,6 +18,8 @@ export default function Login() {
 
     useEffect(() => {
         if (user?.length === 1) {
+
+            Cookies.set("email", user[0].email)
             navigate("/home")
         }
     }, [user, navigate])
