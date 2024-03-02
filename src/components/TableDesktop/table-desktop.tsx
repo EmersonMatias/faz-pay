@@ -20,7 +20,7 @@ export default function TableDesktop({ products }: Readonly<TableProps>) {
     }
 
     return (
-        <Container>
+        <Container data-testid="table">
             <table>
 
                 <thead>

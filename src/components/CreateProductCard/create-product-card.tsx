@@ -13,7 +13,7 @@ export default function CreateProductCard({ setCreateProductCardOpen }: CreatePr
     const { mutate: createProduct } = useCreateProduct(reset)
 
     return (
-        <Container>
+        <Container data-testid="create-product-card">
             <FormContainer>
                 <ExitIcon src={Exit} onClick={() => setCreateProductCardOpen(false)} alt="ExitIcon" />
 

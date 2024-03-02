@@ -10,20 +10,19 @@ export default function Home() {
     const { data: products, isSuccess } = useGetAllProducts()
     const [createProductCardOpen, setCreateProductCardOpen] = useState(false)
 
-
     return (
         <Container>
             <Header />
 
             <TitleContainer>
-                <h1>Investimentos</h1>
+                <h1 data-testid="title">Investimentos</h1>
 
-                <CreateProductButton onClick={() => setCreateProductCardOpen(true)}>Criar Investimento</CreateProductButton>
+                <CreateProductButton data-testid="create-investiment" onClick={() => setCreateProductCardOpen(true)}>Criar Investimento</CreateProductButton>
             </TitleContainer>
 
 
 
-            {isSuccess && <TableDesktop products={products} />}
+            {isSuccess ? <TableDesktop products={products} /> : null}
             {createProductCardOpen && <CreateProductCard setCreateProductCardOpen={setCreateProductCardOpen} />}
 
 

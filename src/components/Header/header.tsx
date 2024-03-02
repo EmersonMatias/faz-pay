@@ -5,7 +5,7 @@ import Loggout from "../../utils/loggout";
 
 export default function Header() {
     return (
-        <Container>
+        <Container data-testid="header">
             <img src={Logo} alt="Logo"/>
             <ExitButton onClick={() => Loggout()}>Sair</ExitButton>
         </Container>
