@@ -1,30 +1,58 @@
-# React + TypeScript + Vite
+# FazPay
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Breve descrição ou resumo do projeto.
 
-Currently, two official plugins are available:
+## Índice
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. [Sobre](#sobre)
+2. [Instalação](#instalação)
+3. [Como Usar](#como-usar)
+4. [Informações Importantes](#informaçoes-importantes)
 
-## Expanding the ESLint configuration
+## Sobre
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Este projeto é uma aplicação ReactJS com funcionalidades de login, cadastro de usuário, listagem e edição de produtos, implementando testes unitários para garantir a qualidade do código. Utiliza uma API mockada para simular chamadas de backend e é responsivo para oferecer uma boa experiência em dispositivos diversos.
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+## Instalação
+Para instalar e configurar o projeto localmente, siga estas etapas:
+1. Certifique-se de ter o Node.js instalado em sua máquina. Você pode baixá-lo aqui.
+2. Clone o repositório do projeto:
+```bash
+git clone https://github.com/seu-usuario/faz-pay.git
 ```
+3. Navegue até o diretório do projeto:
+```bash
+cd faz-pay
+```
+4. Instale as dependências do projeto usando o npm:
+```bash
+cd npm i
+```
+## Como Usar
+Após instalar o projeto e suas dependências, você pode executar os seguintes comandos:
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+* Para iniciar o servidor de desenvolvimento:
+```bash
+npm run dev
+```
+Este comando iniciará o servidor de desenvolvimento do Vite. Você poderá acessar o projeto no navegador em http://localhost:5173.
+
+* Para construir o projeto para produção:
+```bash
+npm run build
+```
+Este comando compilará o projeto para produção na pasta dist.
+
+* Para executar os testes unitários:
+```bash
+npm  test
+```
+Este comando executará os testes usando o Jest.
+
+* Para iniciar o servidor JSON para simular uma API:
+```bash
+npm run server-json
+```
+Este comando iniciará o servidor JSON usando o JSON Server.
+
+

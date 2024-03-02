@@ -4,14 +4,8 @@ import TableDesktop from "./table-desktop";
 import { Products, useDeleteProduct } from '../../hooks/products-hooks';
 
 jest.mock('../../hooks/products-hooks', () => ({
-    useDeleteProduct: jest.fn(() => {
-        const callBackFunction = jest.fn()
-        return callBackFunction
-    }),
-    useUpdateProduct: jest.fn(() => {
-        const callBackFunction = jest.fn()
-        return callBackFunction
-    })
+    useDeleteProduct: jest.fn(() => ({mutate: jest.fn()})),
+    useUpdateProduct: jest.fn(() => ({mutate: jest.fn()}))
 }));
 
 describe('TableDesktop', () => {
@@ -56,6 +50,7 @@ describe('TableDesktop', () => {
     });
 
     it('should call useDeletProduct on click delete product', () => {
+        window.confirm = jest.fn().mockReturnValue(true);
         const deleteIcon = screen.getByAltText(`Delete ${product.name}`);
         fireEvent.click(deleteIcon);
 

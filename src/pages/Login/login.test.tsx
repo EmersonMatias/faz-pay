@@ -3,6 +3,7 @@ import CustomRender from "../../utils/custom-render";
 import Login from "./login";
 import '@testing-library/jest-dom/jest-globals';
 import '@testing-library/jest-dom';
+import { act } from "react-dom/test-utils";
 
 let mockUser: [] | string[] = []
 
@@ -46,7 +47,11 @@ describe('Login Component', () => {
     it('should displays error message for invalid credentials', async () => {
         fireEvent.change(screen.getByLabelText('Email'), { target: { value: 'adriana@gmail.com' } });
         fireEvent.change(screen.getByLabelText('Senha'), { target: { value: '12345678' } });
-        fireEvent.click(screen.getByRole('button', { name: 'Logar' }));
+        
+        await act(async () => {
+            fireEvent.click(screen.getByRole('button', { name: 'Logar' }));
+
+        })
 
         expect(screen.getByText('Email ou senha incorretos!')).toBeInTheDocument();
     });
