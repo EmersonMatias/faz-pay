@@ -20,7 +20,7 @@ export default function Register() {
         <Container>
             <FormContainer>
 
-                <ImgLogo src={Logo} />
+                <ImgLogo src={Logo} alt="Logo" />
 
                 <Form onSubmit={handleSubmit((e) => registerUser(e))}>
 
@@ -61,7 +61,10 @@ export default function Register() {
 
                     <Button>Cadastrar</Button>
                 </Form>
-                <p className="loginMessage">Já possui uma conta? <CustomLink to={"/"}>Login</CustomLink></p>
+                <p className="loginMessage">
+                    Já possui uma conta?
+                    <CustomLink to={"/"} data-testid="to-login-page">Login</CustomLink>
+                </p>
 
             </FormContainer>
 
