@@ -41,6 +41,15 @@ export const Container = styled.section`
         padding-bottom: 32px;
     }
 
+    .details-buttons{
+        padding: 16px 0;
+        display: flex;
+        justify-content: center;
+       gap:50px ;
+       border-bottom: 1px solid ${props => props.theme.colors.gray20};
+       
+    }
+
     td{
         padding: 0px 16px;
         text-align: center;
@@ -53,7 +62,12 @@ export const Container = styled.section`
          img{
             width: 34px;
             height: 34px;
-            border-radius: 100%;
+        }
+
+        .icon{
+            width: 24px;
+            height: 24px;
+
         }
 
         

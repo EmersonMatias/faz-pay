@@ -63,11 +63,11 @@
   ],
   "products": [
     {
-      "id": "1",
       "name": "Petrobras SA",
       "price": 25.3,
       "category": "Ações Nacionais",
-      "description": "Empresa brasileira de energia."
+      "description": "Empresa brasileira de energia.",
+      "id": "1"
     },
     {
       "name": "Apple Inc.",
@@ -96,13 +96,6 @@
       "price": 30.4,
       "category": "Ações Nacionais",
       "description": "Banco brasileiro."
-    },
-    {
-      "id": "6",
-      "name": "Amazon.com Inc.",
-      "price": 3500.25,
-      "category": "Ações Internacionais",
-      "description": "Empresa de comércio eletrônico dos Estados Unidos."
     },
     {
       "id": "7",
