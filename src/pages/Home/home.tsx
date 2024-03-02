@@ -5,6 +5,7 @@ import TableDesktop from "../../components/TableDesktop/table-desktop";
 import { useGetAllProducts } from "../../hooks/products-hooks";
 import { Container, TitleContainer } from "./styled";
 import { CreateProductButton } from "../../components/ui/button";
+import TableMobile from "../../components/TableMobile/table-mobile";
 
 export default function Home() {
     const { data: products, isSuccess } = useGetAllProducts()
@@ -21,8 +22,10 @@ export default function Home() {
             </TitleContainer>
 
 
+            {isSuccess ? <TableMobile products={products} /> : null}
+            {isSuccess && <TableDesktop products={products} />}
+        
 
-            {isSuccess ? <TableDesktop products={products} /> : null}
             {createProductCardOpen && <CreateProductCard setCreateProductCardOpen={setCreateProductCardOpen} />}
 
 

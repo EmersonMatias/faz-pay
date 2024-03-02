@@ -65,6 +65,6 @@ export default function TableDesktop({ products }: Readonly<TableProps>) {
 }
 
 
-interface TableProps {
+export interface TableProps {
     products: Products[]
 }

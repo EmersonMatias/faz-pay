@@ -54,14 +54,16 @@ export const Container = styled.section`
         border-top: 1px solid ${props => props.theme.colors.purple30};
         border-collapse: collapse;
     }
+
+    @media screen and (max-width: 1200px) {
+      td,th {
+        padding: 16px 16px;
+      }
+    }
  
     @media screen and (max-width: 900px) {
         margin-top: 0px;
-
-        table{
-            display: none;
-        }
-      
+        display: none;
     }
 `
 

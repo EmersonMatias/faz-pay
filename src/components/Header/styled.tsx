@@ -13,4 +13,9 @@ export const Container = styled.header`
     img{
         height: 80px;
     }
+
+    @media screen and (max-width: 400px) {
+        justify-content: left;
+        padding-left: 16px;
+    }
 `

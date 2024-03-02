@@ -14,8 +14,17 @@ describe('Login Component', () => {
 
     beforeEach(() => {
         render(<CustomRender><Login /></CustomRender>);
-    }
-    );
+    })
+
+    it("should change page when click create my account", async () => {
+        const createAccount = screen.getByTestId("create-account")
+        fireEvent.click(createAccount)
+        
+        await waitFor(() => {
+            expect(window.location.pathname).toEqual('/register');
+        });
+
+    })
 
     it("should renders the login form", () => {
 
@@ -53,15 +62,7 @@ describe('Login Component', () => {
         });
     });
 
-    it("should change page when click create my account", async () => {
-        const createAccount = screen.getByTestId("create-account")
-        fireEvent.click(createAccount)
-        
-        await waitFor(() => {
-            expect(window.location.pathname).toEqual('/register');
-        });
-
-    })
+  
 
 
 

@@ -12,5 +12,4 @@ export default {
     transformIgnorePatterns: [
         "/node_modules/(?!(your-module-using-import-meta)/)",
     ],
-
 }
