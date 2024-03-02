@@ -4,25 +4,20 @@ import { FormContainer, Form } from "../ui/form";
 import { Container, ExitIcon } from "./styled";
 import { Button } from "../ui/button";
 import Exit from "../../assets/img/Exit.png"
-import { Product, useCreateProduct } from "../../hooks/products-hooks";
+import { useCreateProduct } from "../../hooks/products-hooks";
+import { CreateProductCardProps, ProductForm } from "../../types/type";
+import OnSubmitProductsForm from "./functions/on-submit-products-form";
 
 export default function CreateProductCard({ setCreateProductCardOpen }: CreateProductCardProps) {
     const { register, formState: { errors }, handleSubmit, reset } = useForm<ProductForm>()
     const { mutate: createProduct } = useCreateProduct(reset)
 
-    function onSubmitProductsForm(productForm: ProductForm) {
-        const price = Number(productForm.price)
-        const product: Product = { ...productForm, price }
-
-        createProduct(product)
-    }
-
     return (
         <Container>
             <FormContainer>
-                <ExitIcon src={Exit} onClick={() => setCreateProductCardOpen(false)} />
+                <ExitIcon src={Exit} onClick={() => setCreateProductCardOpen(false)} alt="ExitIcon" />
 
-                <Form style={{ paddingTop: "48px" }} onSubmit={handleSubmit((e) => onSubmitProductsForm(e))}>
+                <Form data-testid="teste" style={{ paddingTop: "48px" }} onSubmit={handleSubmit((e) => OnSubmitProductsForm(e, createProduct))}>
 
                     <InputForm
                         label="Nome do investimento"
@@ -83,14 +78,3 @@ export default function CreateProductCard({ setCreateProductCardOpen }: CreatePr
 }
 
 
-interface CreateProductCardProps {
-    setCreateProductCardOpen: React.Dispatch<React.SetStateAction<boolean>>
-}
-
-
-export interface ProductForm {
-    name: string,
-    price: string,
-    category: string,
-    description: string
-}

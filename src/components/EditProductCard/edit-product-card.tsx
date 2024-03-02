@@ -6,8 +6,9 @@ import { Button } from "../ui/button";
 import Exit from "../../assets/img/Exit.png"
 import { Products, useUpdateProduct } from "../../hooks/products-hooks";
 import { useEffect } from "react";
+import { ProductForm, UpdateProductCardProps } from "../../types/type";
 
-export default function EditProductCard({ setProduct, product }: CreateProductCardProps) {
+export default function EditProductCard({ setProduct, product }: UpdateProductCardProps) {
     const { register, formState: { errors }, setValue, handleSubmit, reset } = useForm<ProductForm>()
     const { mutate: updateProduct } = useUpdateProduct({ reset, setProduct })
     const id = product?.id
@@ -99,14 +100,4 @@ export default function EditProductCard({ setProduct, product }: CreateProductCa
     )
 }
 
-interface CreateProductCardProps {
-    product: Products,
-    setProduct: React.Dispatch<React.SetStateAction<Products | null>>
-}
 
-export interface ProductForm {
-    name: string,
-    price: string,
-    category: string,
-    description: string
-}

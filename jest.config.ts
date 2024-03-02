@@ -9,4 +9,8 @@ export default {
         "enzyme-to-json/serializer"
     ],
     moduleFileExtensions: ['js', 'mjs', 'cjs', 'jsx', 'ts', 'tsx', 'json', 'node'],
+    transformIgnorePatterns: [
+        "/node_modules/(?!(your-module-using-import-meta)/)",
+    ],
+
 }

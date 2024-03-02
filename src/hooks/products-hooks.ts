@@ -1,13 +1,14 @@
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import axios, { AxiosResponse } from "axios";
 import { UseFormReset } from "react-hook-form";
-import { ProductForm } from "../components/CreateProductCard/create-product-card";
+import { ProductForm } from "../types/type";
+import { BACKEND_URL } from "../utils/backend.-url";
 
 export function useGetAllProducts() {
     return useQuery({
         queryKey: ["products"],
         queryFn: async () => {
-            const sucess: AxiosResponse<Products[]> = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/products`)
+            const sucess: AxiosResponse<Products[]> = await axios.get(`${BACKEND_URL}/products`)
             return sucess.data
         }
     })
@@ -17,7 +18,7 @@ export function useGetOneProduct(id: string) {
     return useQuery({
         queryKey: ["product", `${id}`],
         queryFn: async () => {
-            const sucess: AxiosResponse<Products> = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/products/${id}`)
+            const sucess: AxiosResponse<Products> = await axios.get(`${BACKEND_URL}/products/${id}`)
             return sucess.data
         }
     })
@@ -29,7 +30,7 @@ export function useDeleteProduct() {
     return useMutation({
         mutationKey: ["products"],
         mutationFn: async (id: string) => {
-            await axios.delete(`${import.meta.env.VITE_BACKEND_URL}/products/${id}`)
+            await axios.delete(`${BACKEND_URL}/products/${id}`)
         },
         onSuccess: () => {
             queryClient.invalidateQueries({ queryKey: ["products"] })
@@ -43,7 +44,7 @@ export function useUpdateProduct({ reset, setProduct }: useUpdateProductProps) {
     return useMutation({
         mutationKey: ["products"],
         mutationFn: async (product: Products) => {
-            await axios.put(`${import.meta.env.VITE_BACKEND_URL}/products/${product.id}`, product)
+            await axios.put(`${BACKEND_URL}/products/${product.id}`, product)
         },
         onSuccess: () => {
             reset()
@@ -59,7 +60,7 @@ export function useCreateProduct(reset: UseFormReset<ProductForm>) {
     return useMutation({
         mutationKey: ["products"],
         mutationFn: async (product: Product) => {
-            await axios.post(`${import.meta.env.VITE_BACKEND_URL}/products`, product)
+            await axios.post(`${BACKEND_URL}/products`, product)
         },
         onSuccess: () => {
             reset()

@@ -8,7 +8,7 @@ describe("Header Component", () => {
         render(<CustomRender><Header /></CustomRender>);
         screen.getByAltText("Logo")
     });
-
+ 
     it("should render a exit button", async () => {
         render(<CustomRender><Header /></CustomRender>);
         screen.getByText("Sair")

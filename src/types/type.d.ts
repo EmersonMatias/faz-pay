@@ -20,3 +20,20 @@ export interface InputFormProps {
     placeholder?: string
     message?: string
 }
+
+
+export interface CreateProductCardProps {
+    setCreateProductCardOpen: React.Dispatch<React.SetStateAction<boolean>>
+}
+
+interface UpdateProductCardProps {
+    product: Products,
+    setProduct: React.Dispatch<React.SetStateAction<Products | null>>
+}
+
+export interface ProductForm {
+    name: string,
+    price: string,
+    category: string,
+    description: string
+}
