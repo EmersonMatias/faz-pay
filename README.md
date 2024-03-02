@@ -18,7 +18,7 @@ Para instalar e configurar o projeto localmente, siga estas etapas:
 1. Certifique-se de ter o Node.js instalado em sua máquina. Você pode baixá-lo aqui.
 2. Clone o repositório do projeto:
 ```bash
-git clone https://github.com/seu-usuario/faz-pay.git
+git clone https://github.com/EmersonMatias/faz-pay
 ```
 3. Navegue até o diretório do projeto:
 ```bash
