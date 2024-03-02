@@ -47,6 +47,9 @@ Este comando compilará o projeto para produção na pasta dist.
 ```bash
 npm  test
 ```
+
+* OBS: Ao rodar os testes existe um alerta para a função não mockada para o window.location.realod() ela vem pois ao usar o vite como ambiente de desenvolvimento é complicado mockar funções navitas como o window.location.reload(). No entanto esse aviso não interfere em nada nos testes e no funcionamento do código. 
+
 Este comando executará os testes usando o Jest.
 
 * Para iniciar o servidor JSON para simular uma API:
