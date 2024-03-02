@@ -29,7 +29,7 @@ export default function Login() {
 
             <FormContainer>
 
-                <ImgLogo src={Logo} />
+                <ImgLogo src={Logo} alt="Logo" />
 
                 <Form onSubmit={handleSubmit((e) => login(e))}>
                     <InputForm
@@ -42,6 +42,7 @@ export default function Login() {
                     />
 
                     <InputForm
+                        data-test-id="input-form-password"
                         label="Senha"
                         name="password"
                         register={register}
@@ -55,7 +56,10 @@ export default function Login() {
                     {user?.length === 0 && <p className="errorLogin">Email ou senha incorretos!</p>}
                 </Form>
 
-                <p className="signupMessage">Não tem uma conta? <CustomLink to={"/register"}>Criar minha conta</CustomLink></p>
+                <p data-testid="paragraph" className="signupMessage">
+                    Não tem uma conta?
+                    <CustomLink to={"/register"} data-testid="create-account">Criar minha conta</CustomLink>
+                </p>
             </FormContainer>
 
         </Container>
