@@ -1,6 +1,6 @@
 import Trash from "../../assets/img/Trash.png"
 import Edit from "../../assets/img/Edit.png"
-import {  Products, useDeleteProduct } from "../../hooks/products-hooks";
+import { Products, useDeleteProduct } from "../../hooks/products-hooks";
 import { formatPriceBR } from "../../utils/format-price-br";
 import { Container, Icon } from "./style";
 import { useState } from "react";
@@ -18,12 +18,6 @@ export default function TableDesktop({ products }: Readonly<TableProps>) {
             return deleteProduct(id)
         }
     }
-
-    function handleEdit(product: Products) {
-        setProduct(product)
-    }
-
-
 
     return (
         <Container>
@@ -51,11 +45,11 @@ export default function TableDesktop({ products }: Readonly<TableProps>) {
                             <td>{formatPriceBR(price)}</td>
                             <td >{category}</td>
                             <td >{description}</td>
-                            <td ><Icon src={Edit} onClick={() => handleEdit(product)} /></td>
-                            <td ><Icon onClick={() => handleDeleteProduct(id, name)} src={Trash} /></td>
+                            <td ><Icon src={Edit} onClick={() => setProduct(product)} alt={`Edit ${name}`} /></td>
+                            <td ><Icon onClick={() => handleDeleteProduct(id, name)} src={Trash} alt={`Delete ${name}`}/></td>
                         </tr>
                     })}
-
+ 
                 </tbody>
 
             </table>

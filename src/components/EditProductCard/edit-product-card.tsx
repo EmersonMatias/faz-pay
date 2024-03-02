@@ -30,15 +30,10 @@ export default function EditProductCard({ setProduct, product }: UpdateProductCa
         updateProduct(newProduct)
     }
 
-
-    function handleExit() {
-        setProduct(null)
-    }
-
     return (
-        <Container>
+        <Container data-testid="edit-product-card">
             <FormContainer>
-                <ExitIcon src={Exit} onClick={() => handleExit()} alt="Exit Icon" />
+                <ExitIcon src={Exit} onClick={() =>    setProduct(null)} alt="Exit Icon" />
 
                 <Form style={{ paddingTop: "48px" }} onSubmit={handleSubmit((e) => onSubmitProductsForm(e))}>
 
