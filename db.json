@@ -59,6 +59,12 @@
       "name": "Adriana dos Santos",
       "email": "adriana@gmail.com",
       "password": "12345678"
+    },
+    {
+      "id": "2018",
+      "name": "Guilherme",
+      "email": "guilherme@email.com",
+      "password": "12345678"
     }
   ],
   "products": [
@@ -152,6 +158,13 @@
       "category": "Ações Internacionais",
       "description": "Empresa de veículos elétricos dos Estados Unidos.",
       "id": "14"
+    },
+    {
+      "id": "10e3",
+      "name": "Investimento Teste 1 ",
+      "price": 2100,
+      "category": "Investimento teste 1",
+      "description": "Investimento teste 1"
     }
   ]
 }

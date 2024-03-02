@@ -16,9 +16,17 @@ export const FormContainer = styled.div`
         font-weight: 900;
         color: ${props => props.theme.colors.red};
     }
+
+    @media screen and (max-width: 900px) {
+        padding: 20px 40px;
+        width: 90%;
+        height: 90%;
+        overflow-y: scroll;
+    }
 `
 
 export const Form = styled.form`
+    width: 100%;
     display: flex;
     flex-direction: column;
 `
