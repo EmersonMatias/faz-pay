@@ -1,8 +1,6 @@
 # FazPay
 
-Breve descrição ou resumo do projeto.
-
-## Índice
+### Índice
 
 1. [Sobre](#sobre)
 2. [Instalação](#instalação)
@@ -26,7 +24,7 @@ cd faz-pay
 ```
 4. Instale as dependências do projeto usando o npm:
 ```bash
-cd npm i
+npm i
 ```
 ## Como Usar
 Após instalar o projeto e suas dependências, você pode executar os seguintes comandos:
