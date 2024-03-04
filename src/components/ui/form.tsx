@@ -30,10 +30,3 @@ export const Form = styled.form`
     display: flex;
     flex-direction: column;
 `
-
-export const FormContainerLogin = styled(FormContainer)`
-    @media screen and (max-width: 900px) {
-        height: 80dvh;
-        overflow-y: scroll;
-    }
-`
