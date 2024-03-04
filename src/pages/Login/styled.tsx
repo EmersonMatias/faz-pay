@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.div`
     width: 100%;
-    height: 100vh;
+    height: 100dvh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -10,6 +10,11 @@ export const Container = styled.div`
 
     .signupMessage{
         margin-top: 24px;
+    }
+
+    @media screen and (max-width: 900px) {
+        margin-top: 0px;
+        overflow-y: scroll;
     }
 `
 

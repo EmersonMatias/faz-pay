@@ -10,6 +10,10 @@ export const Button = styled.button`
    font-size: 18px;
    position: relative;
    cursor: pointer;
+
+   @media screen and (max-width: 900px) {
+        padding: 16px 40px;
+    }
 `
 
 export const ExitButton = styled(Button)`

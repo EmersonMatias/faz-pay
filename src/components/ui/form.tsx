@@ -20,7 +20,7 @@ export const FormContainer = styled.div`
     @media screen and (max-width: 900px) {
         padding: 20px 40px;
         width: 90%;
-        height: 90%;
+        height: 80%;
         overflow-y: scroll;
     }
 `
@@ -29,4 +29,11 @@ export const Form = styled.form`
     width: 100%;
     display: flex;
     flex-direction: column;
+`
+
+export const FormContainerLogin = styled(FormContainer)`
+    @media screen and (max-width: 900px) {
+        height: 80dvh;
+        overflow-y: scroll;
+    }
 `

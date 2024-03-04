@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1709397149975" clover="3.2.0">
-  <project timestamp="1709397149975" name="All files">
-    <metrics statements="156" coveredstatements="117" conditionals="30" coveredconditionals="17" methods="76" coveredmethods="53" elements="262" coveredelements="187" complexity="0" loc="156" ncloc="156" packages="17" files="34" classes="34"/>
+<coverage generated="1709546001697" clover="3.2.0">
+  <project timestamp="1709546001698" name="All files">
+    <metrics statements="157" coveredstatements="118" conditionals="30" coveredconditionals="17" methods="76" coveredmethods="53" elements="263" coveredelements="188" complexity="0" loc="157" ncloc="157" packages="17" files="34" classes="34"/>
     <package name=".jest.mocks">
       <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="fileMock.js" path="C:\Users\emers\Documents\faz-pay\.jest\mocks\fileMock.js">
@@ -157,7 +157,7 @@
       </file>
     </package>
     <package name="src.components.ui">
-      <metrics statements="15" coveredstatements="14" conditionals="0" coveredconditionals="0" methods="7" coveredmethods="6"/>
+      <metrics statements="16" coveredstatements="15" conditionals="0" coveredconditionals="0" methods="7" coveredmethods="6"/>
       <file name="button.tsx" path="C:\Users\emers\Documents\faz-pay\src\components\ui\button.tsx">
         <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
         <line num="3" count="7" type="stmt"/>
@@ -172,11 +172,12 @@
         <line num="7" count="14" type="stmt"/>
       </file>
       <file name="form.tsx" path="C:\Users\emers\Documents\faz-pay\src\components\ui\form.tsx">
-        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
         <line num="3" count="6" type="stmt"/>
         <line num="7" count="22" type="stmt"/>
         <line num="17" count="22" type="stmt"/>
         <line num="28" count="6" type="stmt"/>
+        <line num="34" count="6" type="stmt"/>
       </file>
       <file name="input.tsx" path="C:\Users\emers\Documents\faz-pay\src\components\ui\input.tsx">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
@@ -256,7 +257,7 @@
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="3" count="2" type="stmt"/>
         <line num="9" count="9" type="stmt"/>
-        <line num="16" count="2" type="stmt"/>
+        <line num="21" count="2" type="stmt"/>
       </file>
     </package>
     <package name="src.pages.Register">

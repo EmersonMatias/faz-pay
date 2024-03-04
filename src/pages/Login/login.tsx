@@ -3,7 +3,7 @@ import { Container, ImgLogo } from "./styled";
 import InputForm from "../../components/Input-Form/input-form";
 import { Button } from "../../components/ui/button";
 import Logo from "../../assets/img/Logo.png"
-import { FormContainer, Form } from "../../components/ui/form";
+import {  Form, FormContainerLogin } from "../../components/ui/form";
 import { CustomLink } from "../../components/ui/custom-link";
 import { useLoginUser } from "../../hooks/users-hooks";
 import { useNavigate } from "react-router-dom";
@@ -27,7 +27,7 @@ export default function Login() {
     return (
         <Container>
 
-            <FormContainer>
+            <FormContainerLogin>
 
                 <ImgLogo src={Logo} alt="Logo" />
 
@@ -60,7 +60,7 @@ export default function Login() {
                     Não tem uma conta?
                     <CustomLink to={"/register"} data-testid="create-account">Criar minha conta</CustomLink>
                 </p>
-            </FormContainer>
+            </FormContainerLogin>
 
         </Container>
     )

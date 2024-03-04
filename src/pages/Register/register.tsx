@@ -3,7 +3,7 @@ import Logo from "../../assets/img/Logo.png"
 import { useForm } from "react-hook-form";
 import { Container } from "./styled";
 import { ImgLogo } from "../Login/styled";
-import { FormContainer, Form } from "../../components/ui/form";
+import { FormContainer, Form, FormContainerLogin } from "../../components/ui/form";
 import { Button } from "../../components/ui/button";
 import { useRegisterUser } from "../../hooks/users-hooks";
 import { CustomLink } from "../../components/ui/custom-link";
@@ -18,7 +18,7 @@ export default function Register() {
 
     return (
         <Container>
-            <FormContainer>
+            <FormContainerLogin>
 
                 <ImgLogo src={Logo} alt="Logo" />
 
@@ -66,7 +66,7 @@ export default function Register() {
                     <CustomLink to={"/"} data-testid="to-login-page">Login</CustomLink>
                 </p>
 
-            </FormContainer>
+            </FormContainerLogin>
 
             {isSuccess && <SucessMessage>Conta criada com sucesso!</SucessMessage>}
         </Container>
